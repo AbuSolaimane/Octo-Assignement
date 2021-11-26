@@ -1,43 +1,50 @@
-package ma.octo.assignement.domain;
-
-import ma.octo.assignement.domain.util.EventType;
+package ma.octo.assignement.entity;
 
 import javax.persistence.*;
 
+import ma.octo.assignement.entity.util.EventType;
+
+
 @Entity
 @Table(name = "AUDIT")
-public class AuditVirement {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id;
+public class Audit {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-  @Column(length = 100)
-  private String message;
+	@Column(length = 100)
+	private String message;
 
-  @Enumerated(EnumType.STRING)
-  private EventType eventType;
+	@Enumerated(EnumType.STRING)
+	private EventType eventType;
 
-  public Long getId() {
-    return id;
-  }
+	public Audit() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+	public Long getId() {
+		return id;
+	}
 
-  public String getMessage() {
-    return message;
-  }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
+	public String getMessage() {
+		return message;
+	}
 
-  public EventType getEventType() {
-    return eventType;
-  }
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
-  public void setEventType(EventType eventType) {
-    this.eventType = eventType;
-  }
+	public EventType getEventType() {
+		return eventType;
+	}
+
+	public void setEventType(EventType eventType) {
+		this.eventType = eventType;
+	}
+
 }

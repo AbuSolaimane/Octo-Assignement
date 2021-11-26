@@ -1,7 +1,9 @@
 package ma.octo.assignement.repository;
 
-import ma.octo.assignement.domain.AuditVirement;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AuditVirementRepository extends JpaRepository<AuditVirement, Long> {
+import ma.octo.assignement.entity.Audit;
+
+public interface AuditRepository extends JpaRepository<Audit, Long> {
+	
 }

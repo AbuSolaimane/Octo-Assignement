@@ -1,8 +1,8 @@
 package ma.octo.assignement;
 
-import ma.octo.assignement.domain.Compte;
-import ma.octo.assignement.domain.Utilisateur;
-import ma.octo.assignement.domain.Virement;
+import ma.octo.assignement.entity.Compte;
+import ma.octo.assignement.entity.Utilisateur;
+import ma.octo.assignement.entity.Virement;
 import ma.octo.assignement.repository.CompteRepository;
 import ma.octo.assignement.repository.UtilisateurRepository;
 import ma.octo.assignement.repository.VirementRepository;

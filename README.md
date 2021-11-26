@@ -10,7 +10,7 @@ Le versement est une opération trés utile lors des transfert de cash .
  
 Imaginez que vous allez à une agence avec un montant de 1000DH et que vous transferez ça en spécifiant le RIB souhaité .
  
-L'identifiant fonctionnel d'un compte dans ce cas préçis est le RIB .  
+L'identifiant fonctionnel d'un compte dans ce cas préçis est le RIB .
 
 
 ## Assignement :

@@ -1,81 +1,91 @@
-package ma.octo.assignement.domain;
+package ma.octo.assignement.entity;
 
-import org.hibernate.annotations.Fetch;
-
-import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 @Entity
 @Table(name = "UTILISATEUR")
-public class Utilisateur implements Serializable {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id;
+public class Utilisateur {
 
-  @Column(length = 10, nullable = false, unique = true)
-  private String username;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-  @Column(length = 10, nullable = false)
-  private String gender;
+	@Column(length = 10, nullable = false, unique = true)
+	private String username;
 
-  @Column(length = 60, nullable = false)
-  private String lastname;
+	@Column(length = 10, nullable = false)
+	private String gender;
 
-  @Column(length = 60, nullable = false)
-  private String firstname;
+	@Column(length = 60, nullable = false)
+	private String lastname;
 
-  @Temporal(TemporalType.DATE)
-  private Date birthdate;
+	@Column(length = 60, nullable = false)
+	private String firstname;
 
+	@Temporal(TemporalType.DATE)
+	private Date birthdate;
 
-  public String getGender() {
-    return gender;
-  }
+	public Utilisateur() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-  public void setGender(String gender) {
-    this.gender = gender;
-  }
+	public Long getId() {
+		return id;
+	}
 
-  public String getLastname() {
-    return lastname;
-  }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-  public void setLastname(String lastname) {
-    this.lastname = lastname;
-  }
+	public String getUsername() {
+		return username;
+	}
 
-  public String getFirstname() {
-    return firstname;
-  }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-  public void setFirstname(String firstname) {
-    this.firstname = firstname;
-  }
+	public String getGender() {
+		return gender;
+	}
 
-  public Date getBirthdate() {
-    return birthdate;
-  }
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
-  public void setBirthdate(Date birthdate) {
-    this.birthdate = birthdate;
-  }
+	public String getLastname() {
+		return lastname;
+	}
 
-  public String getUsername() {
-    return username;
-  }
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+	public String getFirstname() {
+		return firstname;
+	}
 
-  public Long getId() {
-    return id;
-  }
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+	public Date getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(Date birthdate) {
+		this.birthdate = birthdate;
+	}
+
 }

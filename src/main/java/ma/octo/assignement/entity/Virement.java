@@ -1,77 +1,85 @@
-package ma.octo.assignement.domain;
+package ma.octo.assignement.entity;
 
 import javax.persistence.*;
+
+
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
 @Table(name = "VIREMENT")
 public class Virement {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-  @Column(precision = 16, scale = 2, nullable = false)
-  private BigDecimal montantVirement;
+	@Column(precision = 16, scale = 2, nullable = false)
+	private BigDecimal montantVirement;
 
-  @Column
-  @Temporal(TemporalType.TIMESTAMP)
-  private Date dateExecution;
+	@Column
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dateExecution;
 
-  @ManyToOne
-  private Compte compteEmetteur;
+	@ManyToOne
+	private Compte compteEmetteur;
 
-  @ManyToOne
-  private Compte compteBeneficiaire;
+	@ManyToOne
+	private Compte compteBeneficiaire;
 
-  @Column(length = 200)
-  private String motifVirement;
+	@Column(length = 200)
+	private String motifVirement;
 
-  public BigDecimal getMontantVirement() {
-    return montantVirement;
-  }
+	public Virement() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-  public void setMontantVirement(BigDecimal montantVirement) {
-    this.montantVirement = montantVirement;
-  }
+	public Long getId() {
+		return id;
+	}
 
-  public Date getDateExecution() {
-    return dateExecution;
-  }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-  public void setDateExecution(Date dateExecution) {
-    this.dateExecution = dateExecution;
-  }
+	public BigDecimal getMontantVirement() {
+		return montantVirement;
+	}
 
-  public Compte getCompteEmetteur() {
-    return compteEmetteur;
-  }
+	public void setMontantVirement(BigDecimal montantVirement) {
+		this.montantVirement = montantVirement;
+	}
 
-  public void setCompteEmetteur(Compte compteEmetteur) {
-    this.compteEmetteur = compteEmetteur;
-  }
+	public Date getDateExecution() {
+		return dateExecution;
+	}
 
-  public Compte getCompteBeneficiaire() {
-    return compteBeneficiaire;
-  }
+	public void setDateExecution(Date dateExecution) {
+		this.dateExecution = dateExecution;
+	}
 
-  public void setCompteBeneficiaire(Compte compteBeneficiaire) {
-    this.compteBeneficiaire = compteBeneficiaire;
-  }
+	public Compte getCompteEmetteur() {
+		return compteEmetteur;
+	}
 
-  public String getMotifVirement() {
-    return motifVirement;
-  }
+	public void setCompteEmetteur(Compte compteEmetteur) {
+		this.compteEmetteur = compteEmetteur;
+	}
 
-  public void setMotifVirement(String motifVirement) {
-    this.motifVirement = motifVirement;
-  }
+	public Compte getCompteBeneficiaire() {
+		return compteBeneficiaire;
+	}
 
-  public Long getId() {
-    return id;
-  }
+	public void setCompteBeneficiaire(Compte compteBeneficiaire) {
+		this.compteBeneficiaire = compteBeneficiaire;
+	}
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+	public String getMotifVirement() {
+		return motifVirement;
+	}
+
+	public void setMotifVirement(String motifVirement) {
+		this.motifVirement = motifVirement;
+	}
+
 }
