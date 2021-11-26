@@ -73,7 +73,7 @@ public class VirementServiceImpl implements VirementService{
 			throws SoldeDisponibleInsuffisantException, CompteNonExistantException, TransactionException {
 		
 		Date date = new Date();
-		List<Virement> virements = virementRepository.findByDateExecutionAnd(date);
+		List<Virement> virements = virementRepository.findByDateExecution(date);
 		
 		BigDecimal montantTotal = new BigDecimal(0);
 		for (Virement virement : virements) {
